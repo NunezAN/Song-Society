@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .inputbox {
   position: relative;
-  width: 196px;
+  width: 80%;
+  margin: auto;
 }
 
 .inputbox input {
@@ -16,7 +18,7 @@
   box-shadow: none;
   border: none;
   color: #23242a;
-  font-size: 1em;
+  font-size: 2em;
   letter-spacing: 0.05em;
   transition: 0.5s;
   z-index: 10;
@@ -26,7 +28,7 @@
   position: absolute;
   left: 0;
   padding: 20px 10px 10px;
-  font-size: 1em;
+  font-size: 2em;
   color: #8f8f8f;
   letter-spacing: 00.05em;
   transition: 0.5s;
@@ -35,8 +37,8 @@
 
 .inputbox input:valid ~ span,
 .inputbox input:focus ~ span {
-  color: #45f3ff;
-  transform: translateX(-10px) translateY(-34px);
+  color: #fe1124;
+  transform: translateX(-10px) translateY(-48px);
   font-size: 0, 75em;
 }
 
@@ -46,7 +48,7 @@
   bottom: 0;
   width: 100%;
   height: 2px;
-  background: #45f3ff;
+  background: #fe1124;
   border-radius: 4px;
   transition: 0.5s;
   pointer-events: none;
@@ -55,5 +57,5 @@
 
 .inputbox input:valid ~ i,
 .inputbox input:focus ~ i {
-  height: 44px;
+  height: 60px;
 }

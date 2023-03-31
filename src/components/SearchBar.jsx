@@ -2,7 +2,7 @@ import React from "react";
 
 const SearchBar = () => {
   return (
-    <div class="inputbox">
+    <div className="inputbox">
       <input required="required" type="text" />
       <span>Enter a Youtube Link</span>
       <i></i>
