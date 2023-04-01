@@ -4,9 +4,9 @@ const SearchBar = ({ setPlaylist }) => {
   const inputRef = useRef("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputRef.current.value);
+    // console.log(inputRef.current.value);
     setPlaylist((cur) => [...cur, inputRef.current.value]);
-    inputRef.current.value = "";
+    // e.target.reset();
   };
   return (
     <form className="inputbox" onSubmit={(e) => handleSubmit(e)}>
