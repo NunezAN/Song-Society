@@ -63,7 +63,7 @@
 .skip__button,
 .skip__button::after {
   cursor: pointer;
-  padding: 16px 20px;
+  padding: 16px 40px;
   font-size: 18px;
   background: linear-gradient(45deg, transparent 5%, #fe1124 5%);
   border: 0;

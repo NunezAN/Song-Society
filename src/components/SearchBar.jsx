@@ -1,16 +1,20 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 const SearchBar = ({ setPlaylist }) => {
-  const inputRef = useRef("");
+  const [input, setInput] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(inputRef.current.value);
-    setPlaylist((cur) => [...cur, inputRef.current.value]);
-    // e.target.reset();
+    setPlaylist((cur) => [...cur, input]);
+    setInput("");
   };
   return (
     <form className="inputbox" onSubmit={(e) => handleSubmit(e)}>
-      <input ref={inputRef} required="required" type="text" />
+      <input
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        required="required"
+        type="text"
+      />
       <span>Enter a Youtube Link</span>
       <i></i>
     </form>
