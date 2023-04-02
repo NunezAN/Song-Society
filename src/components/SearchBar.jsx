@@ -1,14 +1,22 @@
 import React, { useRef, useState } from "react";
 import ReactPlayer from "react-player";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebase";
 
 const SearchBar = ({ setPlaylist }) => {
   const [input, setInput] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (ReactPlayer.canPlay(input)) {
-      setPlaylist((cur) => [...cur, input]);
-      console.log();
+      const timestamp = new Date();
+      const post = {
+        link: input,
+        timestamp: timestamp,
+      };
+      await addDoc(collection(db, "links"), post);
+      //   setPlaylist((cur) => [...cur, input]);
+      //   console.log();
       setInput("");
     } else {
       alert("Not a valid link");

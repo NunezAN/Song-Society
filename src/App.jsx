@@ -1,15 +1,36 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SearchBar from "./components/SearchBar";
 import ReactPlayer from "react-player";
 import logo from "./assets/song-society_logo.png";
+import {
+  collection,
+  deleteDoc,
+  doc,
+  onSnapshot,
+  orderBy,
+  query,
+} from "firebase/firestore";
+import { db } from "./firebase";
 
 function App() {
   const [playlist, setPlaylist] = useState([]);
+  const [playing, setPlaying] = useState("");
   const playerRef = useRef(null);
-
-  const handleVideoEnded = () => {
-    const removed = [...playlist];
-    setPlaylist(removed.slice(1));
+  useEffect(() => {
+    if (playlist.length > 0) {
+      setPlaying(playlist[0].id);
+    }
+  }, [playlist]);
+  useEffect(() => {
+    const q = query(collection(db, "links"), orderBy("timestamp", "asc"));
+    onSnapshot(q, (snapshot) => {
+      setPlaylist(
+        snapshot.docs.map((elem) => ({ id: elem.id, link: elem.data().link }))
+      );
+    });
+  }, []);
+  const handleVideoEnded = async () => {
+    await deleteDoc(doc(db, "links", playing));
   };
   console.log(playlist[0]);
   return (
@@ -39,7 +60,7 @@ function App() {
                 playing={true}
                 controls={true}
                 onEnded={handleVideoEnded}
-                url={playlist[0]}
+                url={playlist[0].link}
                 width="100%"
                 height="100%"
               />
