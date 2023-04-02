@@ -21,6 +21,7 @@ function App() {
       setPlaying(playlist[0].id);
     }
   }, [playlist]);
+
   useEffect(() => {
     const q = query(collection(db, "links"), orderBy("timestamp", "asc"));
     onSnapshot(q, (snapshot) => {
@@ -29,10 +30,11 @@ function App() {
       );
     });
   }, []);
+
   const handleVideoEnded = async () => {
     await deleteDoc(doc(db, "links", playing));
   };
-  console.log(playlist[0]);
+  
   return (
     <div className="bg-black w-full min-h-screen ">
       <div className=" max-w-7xl mx-auto">
