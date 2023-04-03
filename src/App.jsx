@@ -34,16 +34,20 @@ function App() {
   const handleVideoEnded = async () => {
     await deleteDoc(doc(db, "links", playing));
   };
-  
+
   return (
     <div className="bg-black w-full min-h-screen ">
       <div className=" max-w-7xl mx-auto">
-        <div className="flex flex-col w-[80%] pb-12 mx-auto">
-          <img src={logo} alt="" />
-          <h1 className="text-5xl text-[#FE1124] text-center uppercase font-orbitron">
-            Song Society
-          </h1>
+        <div className="flex flex-col w-[80%] mx-auto">
+          <img
+            src={logo}
+            alt=""
+            className="object-fill h-full w-full max-h-[320px]"
+          />
         </div>
+        <h1 className="text-5xl text-[#FE1124] text-center uppercase font-orbitron pb-16">
+          Song Society
+        </h1>
         <SearchBar setPlaylist={setPlaylist} />
         {playlist.length == 0 ? (
           <h1 className="text-white text-center text-3xl p-20">
