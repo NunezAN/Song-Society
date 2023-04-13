@@ -74,7 +74,7 @@ function App() {
             </>
           )}
         </div>
-        <div className="col-span-2 border-2 border-slate-700 rounded-xl h-[97vh] overflow-scroll relative">
+        <div className="col-span-2 border-2 border-slate-700 rounded-xl h-[97vh] overflow-scroll relative no-scrollbar">
           <div className="sticky top-0 bg-black pt-12 px-2">
             <SearchBar setPlaylist={setPlaylist} />
           </div>
