@@ -38,7 +38,7 @@ function App() {
   };
 
   return (
-    <div className="bg-black w-full min-h-screen">
+    <div className="bg-black w-full min-h-screen no-scrollbar">
       <div className=" max-w-7xl mx-auto grid grid-cols-5 p-4">
         <div className="col-span-3 pr-4">
           <div className="flex flex-col w-[80%] mx-auto">
