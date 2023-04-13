@@ -3,17 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  @variants responsive {
-    .no-scrollbar ::-webkit-scrollbar {
-      display: none;
-    }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  }
+/* For IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .inputbox {
