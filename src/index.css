@@ -5,7 +5,7 @@
 
 .inputbox {
   position: relative;
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 
@@ -159,5 +159,21 @@
   100% {
     clip-path: var(--slice-1);
     transform: translate(0);
+  }
+}
+@media (max-width: 550px) {
+  .inputbox span {
+    font-size: 10px;
+  }
+  .inputbox input {
+    font-size: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .inputbox span {
+    font-size: 16px;
+  }
+  .inputbox input {
+    font-size: 16px;
   }
 }
