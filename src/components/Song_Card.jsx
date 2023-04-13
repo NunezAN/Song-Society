@@ -21,8 +21,8 @@ const SongCard = ({ url }) => {
       });
   }, []);
   return (
-    <div className="p-4 border-b-2">
-      <span className="text-white">{title}</span>
+    <div className="p-4 border-b-2 border-gray-400">
+      <span className="text-white text-md md:text-xl">{title}</span>
       <img src={thumbnail} alt="" />
     </div>
   );

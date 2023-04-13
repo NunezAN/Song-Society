@@ -52,12 +52,10 @@ function App() {
             Song Society
           </h1>
           {playlist.length == 0 ? (
-            <h1 className="text-white text-center text-3xl p-20">
-              There are no songs in the playlist! 😞
-            </h1>
+            <></>
           ) : (
             <>
-              <div className="w-[80%] mx-auto pt-12">
+              <div className="pl-4 mx-auto py-6">
                 <button className="skip__button" onClick={handleVideoEnded}>
                   SKIP
                 </button>
@@ -81,7 +79,13 @@ function App() {
             <SearchBar setPlaylist={setPlaylist} />
           </div>
           <div className="p-2">
-            <Queue playlist={playlist} />
+            {playlist.length == 0 ? (
+              <h1 className="text-white text-center text-3xl pt-12">
+                There are no songs in the playlist! 😞
+              </h1>
+            ) : (
+              <Queue playlist={playlist} />
+            )}
           </div>
         </div>
       </div>

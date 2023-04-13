@@ -168,6 +168,14 @@
   .inputbox input {
     font-size: 10px !important;
   }
+  .inputbox input:valid ~ i,
+  .inputbox input:focus ~ i {
+    height: 34px !important;
+  }
+  .inputbox input:valid ~ span,
+  .inputbox input:focus ~ span {
+    transform: translateX(-10px) translateY(-32px) !important;
+  }
 }
 @media (max-width: 913px) {
   .inputbox span {
@@ -175,5 +183,13 @@
   }
   .inputbox input {
     font-size: 16px;
+  }
+  .inputbox input:valid ~ i,
+  .inputbox input:focus ~ i {
+    height: 42px;
+  }
+  .inputbox input:valid ~ span,
+  .inputbox input:focus ~ span {
+    transform: translateX(-10px) translateY(-40px);
   }
 }
