@@ -19,7 +19,7 @@ const SongCard = ({ url }) => {
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
-  }, []);
+  }, [url]);
   return (
     <div className="p-4 border-b-2 border-gray-400">
       <span className="text-white text-md md:text-xl">{title}</span>
